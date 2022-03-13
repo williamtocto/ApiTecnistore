@@ -6,7 +6,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "ciente")
+@Table(name = "cliente")
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class Cliente implements Serializable {
     private String direccion;
     private String telefono;
     private String correo;
-    private int usuarioId;
+    private int idUsuario;
 
     public Long getIdCliente() {
         return idCliente;
@@ -88,11 +88,11 @@ public class Cliente implements Serializable {
         this.correo = correo;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

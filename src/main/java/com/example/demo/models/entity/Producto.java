@@ -10,10 +10,14 @@ public class Producto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProducto;
 
+    @Column(nullable = false,unique = true)
     private String nombre;
+
     private String descripcion;
     private double precio;
     private int stock;
+    private String fotoUrl;
+
     private int idCategoria;
 
     public Long getIdProducto() {
@@ -62,5 +66,13 @@ public class Producto implements Serializable {
 
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+
+    public String getFotoUrl() {
+        return fotoUrl;
+    }
+
+    public void setFotoUrl(String fotoUrl) {
+        this.fotoUrl = fotoUrl;
     }
 }

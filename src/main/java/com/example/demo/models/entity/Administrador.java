@@ -15,7 +15,7 @@ public class Administrador implements Serializable {
     private String nombre;
     private String apellido;
     private String correo;
-    private int usuarioId;
+    private int idUsuario;
 
     public Long getIdAdministrador() {
         return idAdministrador;
@@ -49,11 +49,11 @@ public class Administrador implements Serializable {
         this.correo = correo;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
