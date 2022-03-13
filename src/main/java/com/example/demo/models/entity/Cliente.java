@@ -23,6 +23,9 @@ public class Cliente implements Serializable {
     private String telefono;
     private String correo;
     private int idUsuario;
+    private boolean estadoCliente;
+    
+    
 
     public Long getIdCliente() {
         return idCliente;
@@ -95,4 +98,14 @@ public class Cliente implements Serializable {
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
+
+	public boolean isEstadoCliente() {
+		return estadoCliente;
+	}
+
+	public void setEstadoCliente(boolean estadoCliente) {
+		this.estadoCliente = estadoCliente;
+	}
+    
+    
 }

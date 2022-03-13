@@ -2,7 +2,6 @@ package com.example.demo.controllers;
 
 import com.example.demo.models.entity.DetallePedido;
 import com.example.demo.models.service.interfaces.IDetallePedidoService;
-import com.example.demo.models.service.interfaces.IPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -43,11 +42,12 @@ public class DetallePedidoRestController {
         pedido1.setTotalGeneral(pedido.getTotalGeneral());
         return iPedidoService.save(pedido1);
     }*/
-
+    
+    /*
     @DeleteMapping("/delete/{id}")
     public void deleteDetallePedido(@PathVariable Long id) {
         iDetallePedidoService.delete(id);
-    }
+    }*/
 
 }
 

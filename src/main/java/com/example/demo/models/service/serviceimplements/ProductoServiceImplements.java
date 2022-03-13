@@ -12,6 +12,7 @@ import java.util.List;
 @Service
 public class ProductoServiceImplements implements IProductoService {
 
+	
     @Autowired
     private IProductoDao iProductoDao;
 
@@ -33,10 +34,14 @@ public class ProductoServiceImplements implements IProductoService {
         return iProductoDao.save(producto);
     }
 
-    @Override
+
+
+	
+    /*@Override
     @Transactional
     public void delete(Long id) {
         iProductoDao.deleteById(id);
-    }
-
+    }*/
+    
+   
 }

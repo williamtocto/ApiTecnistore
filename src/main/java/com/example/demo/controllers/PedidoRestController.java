@@ -43,9 +43,9 @@ public class PedidoRestController {
         return iPedidoService.save(pedido1);
     }*/
 
-    @DeleteMapping("/delete/{id}")
+   /* @DeleteMapping("/delete/{id}")
     public void deletePedido(@PathVariable Long id) {
         iPedidoService.delete(id);
-    }
+    }*/
 
 }

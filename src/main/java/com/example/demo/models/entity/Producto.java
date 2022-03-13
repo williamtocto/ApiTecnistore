@@ -17,6 +17,7 @@ public class Producto implements Serializable {
     private double precio;
     private int stock;
     private String fotoUrl;
+    private boolean estado;
 
     private int idCategoria;
 
@@ -75,4 +76,14 @@ public class Producto implements Serializable {
     public void setFotoUrl(String fotoUrl) {
         this.fotoUrl = fotoUrl;
     }
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+    
+    
 }

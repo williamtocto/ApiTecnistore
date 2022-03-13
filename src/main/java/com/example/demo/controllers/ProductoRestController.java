@@ -32,7 +32,6 @@ public class ProductoRestController {
         return iProductoService.findAll();
     }
 
-
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Producto updateProducto(@RequestBody Producto producto, @PathVariable Long id) {
@@ -43,13 +42,19 @@ public class ProductoRestController {
         producto1.setPrecio(producto.getPrecio());
         producto1.setStock(producto.getStock());
         producto1.setIdCategoria(producto.getIdCategoria());
+        producto1.setEstado(true);
+        return iProductoService.save(producto1);
+    }
+
+    @PutMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto deleteProducto(@RequestBody Producto producto, @PathVariable Long id) {
+        Producto producto1 = iProductoService.findById(id);
+
+        producto1.setEstado(false);
 
         return iProductoService.save(producto1);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteProducto(@PathVariable Long id) {
-        iProductoService.delete(id);
-    }
 
 }

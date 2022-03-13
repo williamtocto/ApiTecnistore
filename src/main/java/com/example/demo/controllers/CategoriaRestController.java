@@ -41,11 +41,12 @@ public class CategoriaRestController {
         categoria1.setNombre(categoria.getNombre());
         return iCategoriaService.save(categoria1);
     }
-
+    
+/*
     @DeleteMapping("/delete/{id}")
     public void deleteCategoria(@PathVariable Long id) {
         iCategoriaService.delete(id);
-    }
+    }*/
 
 }
 
