@@ -1,13 +1,16 @@
 package com.example.demo.models.service.interfaces;
 
 
-import com.example.demo.models.entity.Usuario;
+import com.example.apitecnistore.models.entity.Usuario;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IUsuarioService {
-    List<Usuario> findAll();
+    ArrayList<Usuario> findAll();
+
     Usuario findById(Long id);
+
     Usuario save(Usuario usuario);
+
     void delete(Long id);
 }

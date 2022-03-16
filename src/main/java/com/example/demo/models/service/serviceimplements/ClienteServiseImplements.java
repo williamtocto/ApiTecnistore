@@ -1,36 +1,43 @@
 package com.example.demo.models.service.serviceimplements;
 
-import com.example.demo.models.dao.IClienteDao;
-import com.example.demo.models.entity.Administrador;
-import com.example.demo.models.service.interfaces.IAdminServise;
+
+import com.example.apitecnistore.models.entity.Cliente;
+import com.example.apitecnistore.models.service.dao.IClienteDao;
+import com.example.apitecnistore.models.service.interfaces.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
-public class ClienteServiseImplements implements IAdminServise {
+public class ClienteServiseImplements implements IClienteService {
 
     @Autowired
     private IClienteDao iClienteDao;
 
     @Override
-    public List<Administrador> findAll() {
-        return null;
+    @Transactional(readOnly = true)
+    public ArrayList<Cliente> findAll() {
+        return (ArrayList<Cliente>) iClienteDao.findAll();
     }
 
     @Override
-    public Administrador findById(Long id) {
-        return null;
+    @Transactional(readOnly = true)
+    public Cliente findById(Long id) {
+        return iClienteDao.findById(id).orElse(null);
     }
 
     @Override
-    public Administrador save(Administrador administrador) {
-        return null;
+    @Transactional
+    public Cliente save(Cliente cliente) {
+        return iClienteDao.save(cliente);
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-
+        iClienteDao.deleteById(id);
     }
+
 }

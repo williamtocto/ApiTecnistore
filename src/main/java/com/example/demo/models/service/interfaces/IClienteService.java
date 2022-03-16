@@ -1,12 +1,16 @@
 package com.example.demo.models.service.interfaces;
 
-import com.example.demo.models.entity.Cliente;
+import com.example.apitecnistore.models.entity.Cliente;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IClienteService {
-    List<Cliente> findAll();
+
+    ArrayList<Cliente> findAll();
+
     Cliente findById(Long id);
+
     Cliente save(Cliente cliente);
+
     void delete(Long id);
 }

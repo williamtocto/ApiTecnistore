@@ -8,16 +8,17 @@ import java.io.Serializable;
 public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true,nullable = false)
     private Long idProducto;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String nombre;
 
     private String descripcion;
     private double precio;
     private int stock;
     private String fotoUrl;
-    private boolean estado;
+    private String estado;
 
     private int idCategoria;
 
@@ -61,14 +62,6 @@ public class Producto implements Serializable {
         this.stock = stock;
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
     public String getFotoUrl() {
         return fotoUrl;
     }
@@ -77,13 +70,19 @@ public class Producto implements Serializable {
         this.fotoUrl = fotoUrl;
     }
 
-	public boolean isEstado() {
-		return estado;
-	}
+    public String getEstado() {
+        return estado;
+    }
 
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-    
-    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
 }

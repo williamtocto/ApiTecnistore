@@ -1,24 +1,24 @@
 package com.example.demo.models.service.serviceimplements;
 
-import com.example.demo.models.dao.ICategoriaDao;
-import com.example.demo.models.entity.Categoria;
-import com.example.demo.models.service.interfaces.ICategoriaService;
+import com.example.apitecnistore.models.entity.Categoria;
+import com.example.apitecnistore.models.service.dao.ICategoriaDao;
+import com.example.apitecnistore.models.service.interfaces.ICategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
-public class CategoriaServiceImplements implements ICategoriaService{
+public class CategoriaServiceImplements implements ICategoriaService {
 
     @Autowired
     private ICategoriaDao iCategoriaDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Categoria> findAll() {
-        return (List<Categoria>) iCategoriaDao.findAll();
+    public ArrayList<Categoria> findAll() {
+        return ( ArrayList<Categoria>) iCategoriaDao.findAll();
     }
 
     @Override

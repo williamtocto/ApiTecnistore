@@ -8,13 +8,15 @@ import java.util.Date;
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
 
     private String cedula;
-    private String niombre;
+    private String nombre;
     private String apellido;
+
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
@@ -23,9 +25,7 @@ public class Cliente implements Serializable {
     private String telefono;
     private String correo;
     private int idUsuario;
-    private boolean estadoCliente;
-    
-    
+    private String estadoCliente;
 
     public Long getIdCliente() {
         return idCliente;
@@ -43,12 +43,12 @@ public class Cliente implements Serializable {
         this.cedula = cedula;
     }
 
-    public String getNiombre() {
-        return niombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNiombre(String niombre) {
-        this.niombre = niombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -99,13 +99,11 @@ public class Cliente implements Serializable {
         this.idUsuario = idUsuario;
     }
 
-	public boolean isEstadoCliente() {
-		return estadoCliente;
-	}
+    public String getEstadoCliente() {
+        return estadoCliente;
+    }
 
-	public void setEstadoCliente(boolean estadoCliente) {
-		this.estadoCliente = estadoCliente;
-	}
-    
-    
+    public void setEstadoCliente(String estadoCliente) {
+        this.estadoCliente = estadoCliente;
+    }
 }

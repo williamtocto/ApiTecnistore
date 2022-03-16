@@ -1,6 +1,5 @@
 package com.example.demo.models.entity;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -10,6 +9,7 @@ public class Administrador implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long idAdministrador;
 
     private String nombre;

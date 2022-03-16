@@ -1,13 +1,13 @@
 package com.example.demo.models.service.serviceimplements;
 
-import com.example.demo.models.dao.IDetallePedidoDao;
-import com.example.demo.models.entity.DetallePedido;
-import com.example.demo.models.service.interfaces.IDetallePedidoService;
+import com.example.apitecnistore.models.entity.DetallePedido;
+import com.example.apitecnistore.models.service.dao.IDetallePedidoDao;
+import com.example.apitecnistore.models.service.interfaces.IDetallePedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class DetallePedidoServiceImplements implements IDetallePedidoService {
@@ -17,8 +17,8 @@ public class DetallePedidoServiceImplements implements IDetallePedidoService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<DetallePedido> findAll() {
-        return (List<DetallePedido>) iDetallePedidoDao.findAll();
+    public ArrayList<DetallePedido> findAll() {
+        return (ArrayList<DetallePedido>) iDetallePedidoDao.findAll();
     }
 
     @Override

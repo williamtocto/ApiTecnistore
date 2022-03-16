@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class DetallePedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true,nullable = false)
     private Long idDetalle;
 
     private int idPedido;

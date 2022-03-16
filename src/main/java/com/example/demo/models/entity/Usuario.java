@@ -1,11 +1,7 @@
 package com.example.demo.models.entity;
 
 import javax.persistence.*;
-import javax.persistence.Table;
-import javax.servlet.SessionTrackingMode;
 import java.io.Serializable;
-import java.util.Date;
-
 
 
 @Entity
@@ -13,6 +9,7 @@ import java.util.Date;
 public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true,nullable = false)
     private Long idUsuario;
 
     private String tipoUsuario;

@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.ArrayList;
 
-@CrossOrigin(origins = {"http://localhost:8080"})
+//@CrossOrigin(origins = {"http://localhost:8080"})
 @RestController
 @RequestMapping("/pedido")
 public class PedidoRestController {
@@ -17,18 +17,18 @@ public class PedidoRestController {
     private IPedidoService iPedidoService;
 
     @GetMapping("/{id}")//id de aki
-    public Pedido searchPedido(@PathVariable Long id) {
+    public Pedido search(@PathVariable Long id) {
         return iPedidoService.findById(id);
     }
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public Pedido savePedido(@RequestBody Pedido pedido) {
+    public Pedido save(@RequestBody Pedido pedido) {
         return iPedidoService.save(pedido);
     }
 
     @GetMapping("/read")
-    public List<Pedido> readCliente() {
+    public ArrayList<Pedido> read() {
         return iPedidoService.findAll();
     }
 
@@ -41,9 +41,9 @@ public class PedidoRestController {
         pedido1.setFecha(pedido.getFecha());
         pedido1.setTotalGeneral(pedido.getTotalGeneral());
         return iPedidoService.save(pedido1);
-    }*/
+    }
 
-   /* @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deletePedido(@PathVariable Long id) {
         iPedidoService.delete(id);
     }*/

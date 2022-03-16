@@ -1,14 +1,14 @@
 package com.example.demo.models.service.serviceimplements;
 
 
-import com.example.demo.models.dao.ICategoriaDao;
-import com.example.demo.models.dao.IUsuarioDao;
-import com.example.demo.models.entity.Usuario;
-import com.example.demo.models.service.interfaces.IUsuarioService;
+import com.example.apitecnistore.models.entity.Usuario;
+import com.example.apitecnistore.models.service.dao.IUsuarioDao;
+import com.example.apitecnistore.models.service.interfaces.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class UsuarioServiceImplements implements IUsuarioService {
@@ -17,22 +17,26 @@ public class UsuarioServiceImplements implements IUsuarioService {
     private IUsuarioDao iUsuarioDao;
 
     @Override
-    public List<Usuario> findAll() {
-        return null;
+    @Transactional(readOnly = true)
+    public ArrayList<Usuario> findAll() {
+        return (ArrayList<Usuario>)iUsuarioDao.findAll();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Usuario findById(Long id) {
-        return null;
+        return iUsuarioDao.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public Usuario save(Usuario usuario) {
-        return null;
+        return iUsuarioDao.save(usuario);
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-
+        iUsuarioDao.deleteById(id);
     }
 }

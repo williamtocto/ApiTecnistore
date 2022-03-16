@@ -1,12 +1,16 @@
 package com.example.demo.models.service.interfaces;
 
-import com.example.demo.models.entity.Administrador;
+import com.example.apitecnistore.models.entity.Administrador;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IAdminServise {
-    List<Administrador> findAll();
+
+    ArrayList<Administrador> findAll();
+
     Administrador findById(Long id);
+
     Administrador save(Administrador administrador);
+
     void delete(Long id);
 }

@@ -5,48 +5,50 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name =  "pedido")
+@Table(name = "pedido")
 public class Pedido implements Serializable {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private Long idPedido;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private Long idPedido;
 
- private int idCliente;
- private double totalGeneral;
+    private int idCliente;
+    private double totalGeneral;
 
- @Column(name = "fecha")
- @Temporal(TemporalType.DATE)
- private Date fecha;
+    @Column(name = "fecha")
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
 
- public Long getIdPedido() {
-  return idPedido;
- }
 
- public void setIdPedido(Long idPedido) {
-  this.idPedido = idPedido;
- }
+    public Long getIdPedido() {
+        return idPedido;
+    }
 
- public int getIdCliente() {
-  return idCliente;
- }
+    public void setIdPedido(Long idPedido) {
+        this.idPedido = idPedido;
+    }
 
- public void setIdCliente(int idCliente) {
-  this.idCliente = idCliente;
- }
+    public int getIdCliente() {
+        return idCliente;
+    }
 
- public double getTotalGeneral() {
-  return totalGeneral;
- }
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
 
- public void setTotalGeneral(double totalGeneral) {
-  this.totalGeneral = totalGeneral;
- }
+    public double getTotalGeneral() {
+        return totalGeneral;
+    }
 
- public Date getFecha() {
-  return fecha;
- }
+    public void setTotalGeneral(double totalGeneral) {
+        this.totalGeneral = totalGeneral;
+    }
 
- public void setFecha(Date fecha) {
-  this.fecha = fecha;
- }
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
 }

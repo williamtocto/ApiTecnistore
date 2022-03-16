@@ -1,14 +1,14 @@
 package com.example.demo.controllers;
 
-import com.example.demo.models.entity.Producto;
-import com.example.demo.models.service.interfaces.IProductoService;
+import com.example.apitecnistore.models.entity.Producto;
+import com.example.apitecnistore.models.service.interfaces.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.ArrayList;
 
-@CrossOrigin(origins = {"http://localhost:8080"})
+//@CrossOrigin(origins = {"http://localhost:8080"})
 @RestController
 @RequestMapping("/producto")
 public class ProductoRestController {
@@ -17,24 +17,24 @@ public class ProductoRestController {
     private IProductoService iProductoService;
 
     @GetMapping("/{id}")//id de aki
-    public Producto searchProducto(@PathVariable Long id) {
+    public Producto search(@PathVariable Long id) {
         return iProductoService.findById(id);
     }
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public Producto saveProducto(@RequestBody Producto producto) {
+    public Producto save(@RequestBody Producto producto) {
         return iProductoService.save(producto);
     }
 
     @GetMapping("/read")
-    public List<Producto> readProducto() {
+    public ArrayList<Producto> read() {
         return iProductoService.findAll();
     }
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Producto updateProducto(@RequestBody Producto producto, @PathVariable Long id) {
+    public Producto updateo(@RequestBody Producto producto, @PathVariable Long id) {
         Producto producto1 = iProductoService.findById(id);
 
         producto1.setNombre(producto.getNombre());
@@ -42,7 +42,7 @@ public class ProductoRestController {
         producto1.setPrecio(producto.getPrecio());
         producto1.setStock(producto.getStock());
         producto1.setIdCategoria(producto.getIdCategoria());
-        producto1.setEstado(true);
+        producto1.setEstado("true");
         return iProductoService.save(producto1);
     }
 
@@ -51,7 +51,7 @@ public class ProductoRestController {
     public Producto deleteProducto(@RequestBody Producto producto, @PathVariable Long id) {
         Producto producto1 = iProductoService.findById(id);
 
-        producto1.setEstado(false);
+        producto1.setEstado("false");
 
         return iProductoService.save(producto1);
     }

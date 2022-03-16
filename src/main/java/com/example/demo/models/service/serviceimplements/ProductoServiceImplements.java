@@ -1,25 +1,25 @@
 package com.example.demo.models.service.serviceimplements;
 
-import com.example.demo.models.dao.IProductoDao;
-import com.example.demo.models.entity.Producto;
-import com.example.demo.models.service.interfaces.IProductoService;
+import com.example.apitecnistore.models.entity.Producto;
+import com.example.apitecnistore.models.service.dao.IProductoDao;
+import com.example.apitecnistore.models.service.interfaces.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class ProductoServiceImplements implements IProductoService {
 
-	
+
     @Autowired
     private IProductoDao iProductoDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Producto> findAll() {
-        return (List<Producto>) iProductoDao.findAll();
+    public ArrayList<Producto> findAll() {
+        return (ArrayList<Producto>)  iProductoDao.findAll();
     }
 
     @Override
@@ -42,6 +42,6 @@ public class ProductoServiceImplements implements IProductoService {
     public void delete(Long id) {
         iProductoDao.deleteById(id);
     }*/
-    
-   
+
+
 }

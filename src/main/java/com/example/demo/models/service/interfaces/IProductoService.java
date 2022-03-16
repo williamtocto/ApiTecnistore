@@ -1,15 +1,17 @@
 package com.example.demo.models.service.interfaces;
 
-import com.example.demo.models.entity.Producto;
+import com.example.apitecnistore.models.entity.Producto;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IProductoService {
-   
-	
-	List<Producto> findAll();
+
+
+    ArrayList<Producto> findAll();
+
     Producto findById(Long id);
+
     Producto save(Producto producto);
-   
+
 
 }
